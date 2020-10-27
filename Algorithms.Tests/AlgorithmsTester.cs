@@ -18,5 +18,12 @@ namespace Algorithms.Tests
             var res = Algorithms.Divide(1, 1);
             Assert.AreEqual(1, res);
         }
+
+        [TestMethod]
+        public void Divide_With10And0_Then10()
+        {
+            var res = Algorithms.Divide(10, 0);
+            Assert.AreEqual(10,res);
+        }
     }
 }
