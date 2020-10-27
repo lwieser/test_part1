@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Algorithms
 {
@@ -13,12 +14,31 @@ namespace Algorithms
 
         public static int[] Fibonacci(int length)
         {
-            return null;
+            if (length < 0)
+            {
+                length = 0;
+            }
+
+            int[] res = new int[length];
+            for (int i = 0; i < length; i++)
+            {
+                if (i == 0 || i == 1)
+                {
+                    res[i] = i;
+                }
+                else
+                {
+                    res[i] = res[i - 1] + res[i - 2];
+                }
+            }
+
+            return res;
         }
 
         public static bool IsPalindrome(string word)
         {
-            return false;
+            if (word == null) return false;
+            return String.Join("", word.Reverse()).Equals(word, StringComparison.CurrentCultureIgnoreCase);
         }
         public static int PGCD(int a, int b)
         {
