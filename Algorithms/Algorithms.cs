@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 
 namespace Algorithms
 {
@@ -81,7 +82,35 @@ namespace Algorithms
 
         public static string CorrectText(string text)
         {
-            return null;
+            if (text == null) return null;
+
+            var sentences = text.Split('.');
+            var correctedSentences = new string[sentences.Length];
+            var res = "";
+            for (int i = 0; i < sentences.Length; i++)
+            {
+                var corrected = CorrectSentence(sentences[i]);
+                if (!String.IsNullOrEmpty(corrected))
+                {
+                    res += corrected ;
+                }
+
+            }
+
+            return res;
+        }
+
+        public static string CorrectSentence(string text)
+        {
+            if (String.IsNullOrEmpty(text)) return text;
+
+            text = text.Substring(0, 1).ToUpper() + text.Substring(1);
+            if (text.Last() != '.')
+            {
+                text += ".";
+            }
+
+            return text;
         }
     }
 }
