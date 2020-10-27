@@ -43,11 +43,42 @@ namespace Algorithms
             var reversedWord = String.Join("", reversed);
             return reversedWord.Equals(word, StringComparison.CurrentCultureIgnoreCase);
         }
+        //
+        // public static int PGCD(int a, int b)
+        // {
+        //     if (a == 0 || b == 0) return 0;
+        //     int rest = a % b;
+        //     return rest == 0 ? b : PGCD(b, rest);
+        // }
 
         public static int PGCD(int a, int b)
         {
-            return 0;
+            if (a == 0 || b == 0) return 0;
+        
+            int max = Math.Max(a, b);
+            int min = Math.Min(a, b);
+            var pgcd = min;
+            var rest = GetRest(min, max);
+            while (rest != 0)
+            {
+                max = min;
+                min = rest;
+                rest = GetRest(max, min);
+                pgcd = min;
+            }
+        
+            return pgcd;
         }
+        
+        public  static int GetRest(int a, int b)
+        {
+            int max = Math.Max(a, b);
+            int min = Math.Min(a, b);
+            var divisionResult = max / min;
+            var rest = max - min * divisionResult;
+            return rest;
+        }
+
         public static string CorrectText(string text)
         {
             return null;
