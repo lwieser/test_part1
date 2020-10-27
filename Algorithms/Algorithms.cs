@@ -38,8 +38,12 @@ namespace Algorithms
         public static bool IsPalindrome(string word)
         {
             if (word == null) return false;
-            return String.Join("", word.Reverse()).Equals(word, StringComparison.CurrentCultureIgnoreCase);
+
+            var reversed = word.Reverse();
+            var reversedWord = String.Join("", reversed);
+            return reversedWord.Equals(word, StringComparison.CurrentCultureIgnoreCase);
         }
+
         public static int PGCD(int a, int b)
         {
             return 0;

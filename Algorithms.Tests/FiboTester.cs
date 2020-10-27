@@ -7,7 +7,7 @@ namespace Algorithms.Tests
     public class FiboTester
     {
         [TestMethod]
-        public void Fibonacci_With0_ThenLastElementIs0()
+        public void Fibonacci_With0_ThenResultIsEmpty()
         {
             Assert.AreEqual(0, Algorithms.Fibonacci(0).Length);
         }

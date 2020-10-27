@@ -13,7 +13,7 @@ namespace Algorithms.Tests
         [TestMethod]
         public void IsPalindrome_Withmaoam_ThenTrue()
         {
-            Assert.IsTrue(Algorithms.IsPalindrome("Maoam"));
+            Assert.IsTrue(Algorithms.IsPalindrome("maoam"));
         }
         [TestMethod]
         public void IsPalindrome_WithNull_ThenFalse()
@@ -24,6 +24,11 @@ namespace Algorithms.Tests
         public void IsPalindrome_WithEmpty_ThenTrue()
         {
             Assert.IsTrue(Algorithms.IsPalindrome(""));
+        }
+        [TestMethod]
+        public void IsPalindrome_WithLongEmptyString_ThenTrue()
+        {
+            Assert.IsTrue(Algorithms.IsPalindrome("            "));
         }
     }
 }
