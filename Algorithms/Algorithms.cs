@@ -20,7 +20,7 @@ namespace Algorithms
         {
             return false;
         }
-        public static int PGCD(string word)
+        public static int PGCD(int a, int b)
         {
             return 0;
         }
