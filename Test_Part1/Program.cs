@@ -10,9 +10,9 @@ namespace Test_Part1
             while (true)
             {
                 Console.WriteLine("Veuillez entrer le numérateur");
-                int a = int.Parse(Console.ReadLine());
+                int a = InputParser.ParseInt(Console.ReadLine());
                 Console.WriteLine("Veuillez entrer le dénominateur");
-                int b = int.Parse(Console.ReadLine());
+                int b = InputParser.ParseInt(Console.ReadLine());
                 float res = Algorithms.Algorithms.Divide(a, b);
                 Console.WriteLine($"Résultat {res}");
             }
