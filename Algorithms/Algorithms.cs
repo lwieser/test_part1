@@ -104,11 +104,39 @@ namespace Algorithms
         {
             if (String.IsNullOrEmpty(text)) return text;
 
+            text = FixUpperAndDot(text);
+            text = RemoveSpaces(text);
+
+            return text;
+        }
+
+        public static string FixUpperAndDot(string text)
+        {
             text = text.Substring(0, 1).ToUpper() + text.Substring(1);
             if (text.Last() != '.')
             {
                 text += ".";
             }
+
+            return text;
+        }
+
+        public static string RemoveSpaces(string text)
+        {
+            do
+            {
+                text = text.Replace("  ", " ");
+            } while (text.Contains("  "));
+
+            return text;
+        }
+
+        public static string CorrectDots(string text)
+        {
+            do
+            {
+                text = text.Replace("....", "...");
+            } while (text.Contains("...."));
 
             return text;
         }
